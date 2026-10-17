@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content=noindex><title>Overload status</title>
+<style>body{background:#0d1117;color:#e6edf3;font:15px system-ui;margin:0;padding:12px}h1{font-size:20px;margin:4px 0}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}.c{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px}.c h2{font-size:13px;color:#8b949e;margin:0 0 6px;text-transform:uppercase}.big{font-size:26px;font-weight:600}.ok{color:#3fb950}.bad{color:#f85149}.warn{color:#d29922}.bar{height:8px;background:#30363d;border-radius:4px;margin:4px 0 8px}.bar i{display:block;height:100%;background:#58a6ff;border-radius:4px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:3px 2px;border-bottom:1px solid #21262d}pre{white-space:pre-wrap;word-break:break-all;font-size:11px;color:#c9d1d9;max-height:420px;overflow:auto;margin:0}small{color:#8b949e}.tl{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;align-items:flex-start}.ic{flex:0 0 30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px}.tl .tx{flex:1}.tl .tm{font-size:12px;color:#8b949e}.cnt{background:#30363d;border-radius:9px;padding:0 7px;font-size:12px;margin-left:6px}</style></head>
+<body><h1>⚡ Overload plant</h1><small id=upd>loading…</small><div class=g id=g></div>
+<div class=c style="margin-top:10px"><h2>Recent activity</h2><div id=log></div></div>
+<script>
+const ct=t=>t?new Date(t).toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' CT':'—';
+const f=(x,d=1)=>x==null?'—':(+x).toFixed(d);const bar=(a,b)=>`<div class=bar><i style="width:${Math.min(100,b?a/b*100:0)}%"></i></div>`;
+async function go(){try{const d=await (await fetch('data.json?t='+Date.now(),{cache:'no-store'})).json();
+document.getElementById('upd').textContent='Page refreshed '+ct(d.now)+' · bot status '+ct(d.statusAt)+' · auto-refresh 20s';
+const r=d.routes,c=d.caps;const left=d.eth!=null?d.eth-d.floor:null;
+document.getElementById('g').innerHTML=`
+<div class=c><h2>Bot health</h2><div class="big ${d.healthy?'ok':'bad'}">${d.healthy?'Running':'STALE'}</div>heartbeat ${f(d.hbAgeS,0)}s ago<br>last tick ${ct(d.lastTickAt)}</div>
+<div class=c><h2>Generation</h2><div class=big>${f(d.gen,0)} MW</div>routed ${f(d.routed,0)} + research ${f(d.research??0,0)} · unrouted ${f(d.unused,0)} · available ${f(d.avail,0)}${d.odHeld>0?` (${f(d.odHeld,0)} MW overdrive headroom held back, no fuel burned)`:''}
+<table>${['grid','compute','refining'].map(k=>`<tr><td>${k}</td><td>${f(r[k],0)} / ${c[k]} MW</td></tr>`).join('')}</table></div>
+<div class=c><h2>Cooling & heat</h2><div class=big>${f(d.coolUsed,0)} / ${f(d.coolCap,0)}</div>${bar(d.coolUsed,d.coolCap)}heat ${f(d.heat)} (${f(d.heatRate)}/h)</div>
+<div class=c><h2>Mode</h2>Overdrive: <b class=${d.overdrive=='off'?'warn':'ok'}>${d.overdrive}</b> · Eco: <b class=${d.eco=='off'?'ok':'warn'}>${d.eco}</b><br><small>${(d.why||[]).join('<br>')}</small></div>
+<div class=c><h2>Fuel</h2><div class=big>${f(d.fuel,0)} MWh</div>${bar(d.fuel,960)}burn ${f(d.burn,0)}/h · ~${d.burn?f(d.fuel/d.burn,1):'—'} h left${d.lowFuel?' · <span class=warn>low-fuel flag</span>':''}</div>
+<div class=c><h2>Wallet</h2><div class=big>${f(d.eth,6)} ETH</div>floor ${d.floor} · spendable <b class=${left>0?'ok':'bad'}>${f(left,6)}</b></div>
+<div class=c><h2>Weather</h2><div class=big>${d.weather||'—'}</div>coming up: ${(d.soon||[]).join(', ')||'clear'}</div>
+<div class=c><h2>Builds / merges</h2><table>${d.builds.map(b=>`<tr><td>${b.kind} ${b.token}</td><td>→ Lv${b.toGrade}</td><td>${ct(b.eta)}</td></tr>`).join('')||'<tr><td>none</td></tr>'}</table>
+${d.pendingMints.length?'<small>pending mints: '+d.pendingMints.join(', ')+'</small>':''}</div>`;
+const IC={power:['⚡','#1f6feb'],buy:['🛒','#238636'],build:['🔧','#8957e5'],fuel:['⛽','#9e6a03'],weather:['🌦','#0e7490'],warn:['⚠️','#9a6700'],err:['⛔','#b62324'],info:['ℹ️','#30363d']};
+const ago=t=>{const m=Math.round((Date.now()-Date.parse(t))/60000);return m<1?'just now':m<60?m+' min ago':Math.floor(m/60)+' h '+(m%60)+' min ago'};
+const esc=x=>String(x).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]);
+document.getElementById('log').innerHTML=(d.actions||[]).map(a=>{const[i,col]=IC[a.c]||IC.info;return `<div class=tl><div class=ic style="background:${col}">${i}</div><div class=tx>${esc(a.s)}${a.n>1?'<span class=cnt>×'+a.n+'</span>':''}<div class=tm>${ct(a.t)} · ${ago(a.t)}</div></div></div>`}).join('')||'<small>no recent activity</small>';
+}catch(e){document.getElementById('upd').textContent='fetch failed, retrying… '+e}}
+go();setInterval(go,20000);
+</script></body></html>

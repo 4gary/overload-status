@@ -1,0 +1,191 @@
+{
+ "now": "2026-10-17T18:39:08.582Z",
+ "statusAt": "2026-10-17T18:39:07.009Z",
+ "heartbeatAt": "2026-10-17T18:39:05.163Z",
+ "lastTickAt": "2026-10-17T18:38:06.467Z",
+ "hbAgeS": 3.419,
+ "healthy": true,
+ "wallet": "0x2834…5f57",
+ "gen": 1404,
+ "avail": 1650,
+ "routed": 1384,
+ "unused": 0,
+ "odHeld": 246,
+ "research": 20,
+ "routes": {
+  "grid": 780.7179487179487,
+  "compute": 492.8774928774929,
+  "refining": 110.4045584045584
+ },
+ "caps": {
+  "grid": null,
+  "compute": 500,
+  "refining": 112
+ },
+ "coolUsed": 1105.5532763532765,
+ "coolCap": 1145,
+ "heat": 47.3,
+ "heatRate": 35.7,
+ "overdrive": "overdriving",
+ "eco": "off",
+ "why": [
+  "overdrive on (limiter): heat 47.3 + 17.0 < guard 95",
+  "research fuel_efficiency next tier 120 MWh @ 20 MW",
+  "research first: 20 MW funded before compute/refining/grid (10.0 cooling reserved)",
+  "routes sum 1404 MW of 1424.0 gen (research 20); est cooling 1121.2/1145",
+  "overdrive pays: +599 MW routed (0 MW unrouted) worth 10183 gwei/h vs fuel 2415 gwei/h",
+  "OD output capped at 1424 MW to keep compute+refining 612"
+ ],
+ "fuel": 1821.4276340607191,
+ "burn": 1231.0463999999995,
+ "eth": 0.003217320836815125,
+ "floor": 0.00075,
+ "weather": "clear",
+ "soon": [
+  "clear"
+ ],
+ "lowFuel": false,
+ "builds": [
+  {
+   "kind": "Datacenter",
+   "token": "16993",
+   "toGrade": 2,
+   "eta": "2026-10-18T04:50:13.134Z"
+  }
+ ],
+ "pendingMints": [],
+ "actions": [
+  {
+   "t": "2026-10-17T18:31:10.099Z",
+   "c": "warn",
+   "s": "Buying paused (NO_PURCHASE file present)",
+   "n": 13
+  },
+  {
+   "t": "2026-10-17T18:31:10.099Z",
+   "c": "info",
+   "s": "merge skip",
+   "n": 13
+  },
+  {
+   "t": "2026-10-17T18:31:09.661Z",
+   "c": "info",
+   "s": "fuel topup held",
+   "n": 10
+  },
+  {
+   "t": "2026-10-17T18:15:54.873Z",
+   "c": "power",
+   "s": "Routed 1404 MW: grid 792, compute 500, refining 112 (overdrive ON)"
+  },
+  {
+   "t": "2026-10-17T18:00:04.693Z",
+   "c": "power",
+   "s": "Routed 1174 MW: grid 562, compute 500, refining 112 (overdrive ON)"
+  },
+  {
+   "t": "2026-10-17T18:00:04.288Z",
+   "c": "power",
+   "s": "Overdrive running (heat limiter on)"
+  },
+  {
+   "t": "2026-10-17T18:00:04.288Z",
+   "c": "weather",
+   "s": "Weather now: clear"
+  },
+  {
+   "t": "2026-10-17T17:18:41.684Z",
+   "c": "power",
+   "s": "Routed 805 MW: grid 347, compute 458, refining 0"
+  },
+  {
+   "t": "2026-10-17T17:18:41.639Z",
+   "c": "info",
+   "s": "research idle redispatch"
+  },
+  {
+   "t": "2026-10-17T17:18:41.449Z",
+   "c": "warn",
+   "s": "Alert: research zero"
+  },
+  {
+   "t": "2026-10-17T17:18:40.835Z",
+   "c": "info",
+   "s": "Bot started",
+   "n": 4
+  },
+  {
+   "t": "2026-10-17T17:18:22.297Z",
+   "c": "info",
+   "s": "Bot stopped (SIGTERM)",
+   "n": 3
+  },
+  {
+   "t": "2026-10-17T16:50:13.113Z",
+   "c": "build",
+   "s": "Lv3 merge started: Datacenter #16993"
+  },
+  {
+   "t": "2026-10-17T16:50:07.008Z",
+   "c": "build",
+   "s": "Lv3 merge started: Gas Turbine #25577"
+  },
+  {
+   "t": "2026-10-17T16:50:00.529Z",
+   "c": "power",
+   "s": "Routed 825 MW: grid 336, compute 488, refining 1"
+  },
+  {
+   "t": "2026-10-17T16:50:00.087Z",
+   "c": "power",
+   "s": "Overdrive held off: overdrive off: base 825 + 206 MW min gain with consumers at cap needs 860 > 688 safe cooling"
+  },
+  {
+   "t": "2026-10-17T16:50:00.087Z",
+   "c": "weather",
+   "s": "Weather now: storm"
+  },
+  {
+   "t": "2026-10-17T08:49:59.601Z",
+   "c": "power",
+   "s": "Routed 755 MW: grid 143, compute 500, refining 112 (overdrive ON)"
+  },
+  {
+   "t": "2026-10-17T08:48:58.644Z",
+   "c": "warn",
+   "s": "Buying paused (NO_PURCHASE file present)",
+   "n": 19
+  },
+  {
+   "t": "2026-10-17T08:48:58.643Z",
+   "c": "info",
+   "s": "merge skip",
+   "n": 19
+  },
+  {
+   "t": "2026-10-17T08:48:57.535Z",
+   "c": "power",
+   "s": "Overdrive held off: overdrive held (flag on, base targets): game limiter blocks a restart until heat <= 50 (heat 55.2)"
+  },
+  {
+   "t": "2026-10-17T08:48:56.803Z",
+   "c": "info",
+   "s": "Bot started"
+  },
+  {
+   "t": "2026-10-17T08:48:40.736Z",
+   "c": "info",
+   "s": "Bot stopped (SIGTERM)"
+  },
+  {
+   "t": "2026-10-17T08:34:59.395Z",
+   "c": "power",
+   "s": "Routed 1165 MW: grid 553, compute 500, refining 112 (overdrive ON)"
+  },
+  {
+   "t": "2026-10-17T08:34:59.068Z",
+   "c": "power",
+   "s": "Overdrive running (heat limiter on)"
+  }
+ ]
+}
