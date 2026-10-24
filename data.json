@@ -1,0 +1,195 @@
+{
+ "now": "2026-10-24T22:50:43.389Z",
+ "statusAt": "2026-10-24T22:50:04.247Z",
+ "heartbeatAt": "2026-10-24T22:50:39.403Z",
+ "lastTickAt": "2026-10-24T22:50:04.248Z",
+ "hbAgeS": 3.985,
+ "healthy": true,
+ "wallet": "0x2834…5f57",
+ "gen": 1055,
+ "avail": 1117.2787769784172,
+ "routed": 1025,
+ "unused": 0,
+ "odHeld": 0,
+ "research": 30,
+ "routes": {
+  "grid": 313,
+  "compute": 600,
+  "refining": 112
+ },
+ "caps": {
+  "grid": null,
+  "compute": 500,
+  "refining": 112
+ },
+ "coolUsed": 841.5964162284072,
+ "coolCap": 1313.75,
+ "heat": 53.6,
+ "heatRate": -5.7,
+ "overdrive": "off",
+ "eco": "off",
+ "why": [
+  "repair: 62.28 MW offline (spread over turbines), routing actual 1055.00 MW",
+  "overdrive held off (flag cleared, base targets): game limiter blocks a restart until heat <= 50 (heat 53.6)",
+  "research drilling next tier 216 MWh @ 30 MW",
+  "wind 148.5 MW heat-free",
+  "research first: 30 MW funded before compute/refining/grid (15.0 cooling reserved)",
+  "routes sum 1025 MW of 1055.0 gen (research 30); est cooling 843.4/1314"
+ ],
+ "fuel": 15134.701103349777,
+ "burn": 506.2736459827401,
+ "eth": 0.001098309220158806,
+ "floor": 0.00075,
+ "weather": "clear",
+ "soon": [
+  "clear"
+ ],
+ "lowFuel": false,
+ "builds": [],
+ "pendingMints": [],
+ "actions": [
+  {
+   "t": "2026-10-24T22:49:03.092Z",
+   "c": "warn",
+   "s": "Buying paused (FREEZE_SPEND: fuel-only spending (Gary 2026-10-18))"
+  },
+  {
+   "t": "2026-10-24T22:49:03.092Z",
+   "c": "info",
+   "s": "spend frozen",
+   "n": 4
+  },
+  {
+   "t": "2026-10-24T21:56:48.756Z",
+   "c": "warn",
+   "s": "Buying paused (FREEZE_SPEND: fuel-only spending (Gary 2026-10-18))",
+   "n": 2
+  },
+  {
+   "t": "2026-10-24T21:56:48.755Z",
+   "c": "info",
+   "s": "spend frozen",
+   "n": 8
+  },
+  {
+   "t": "2026-10-24T21:13:48.203Z",
+   "c": "warn",
+   "s": "Buying paused (FREEZE_SPEND: fuel-only spending (Gary 2026-10-18))",
+   "n": 8
+  },
+  {
+   "t": "2026-10-24T21:13:48.203Z",
+   "c": "info",
+   "s": "spend frozen",
+   "n": 32
+  },
+  {
+   "t": "2026-10-24T19:47:55.935Z",
+   "c": "power",
+   "s": "Routed 1025 MW: grid 313, compute 600, refining 112"
+  },
+  {
+   "t": "2026-10-24T19:47:54.562Z",
+   "c": "power",
+   "s": "Overdrive held off: overdrive held off (flag cleared, base targets): game limiter blocks a restart until heat <= 50 (heat 62.7)"
+  },
+  {
+   "t": "2026-10-24T19:20:27.874Z",
+   "c": "info",
+   "s": "wear repair ok"
+  },
+  {
+   "t": "2026-10-24T19:20:27.731Z",
+   "c": "power",
+   "s": "Routed 1025 MW: grid 425, compute 600, refining 0"
+  },
+  {
+   "t": "2026-10-24T19:20:26.591Z",
+   "c": "warn",
+   "s": "Alert: cooling over capacity",
+   "n": 10
+  },
+  {
+   "t": "2026-10-24T18:55:11.160Z",
+   "c": "info",
+   "s": "wear repair skip"
+  },
+  {
+   "t": "2026-10-24T18:55:10.886Z",
+   "c": "power",
+   "s": "Overdrive held off: overheated"
+  },
+  {
+   "t": "2026-10-24T18:53:09.334Z",
+   "c": "power",
+   "s": "Routed 1861 MW: grid 1149, compute 600, refining 112 (overdrive ON)"
+  },
+  {
+   "t": "2026-10-24T18:53:06.820Z",
+   "c": "power",
+   "s": "Overdrive running (heat limiter on)"
+  },
+  {
+   "t": "2026-10-24T17:58:46.043Z",
+   "c": "warn",
+   "s": "10 MW generated but not routed",
+   "n": 26
+  },
+  {
+   "t": "2026-10-24T17:51:34.806Z",
+   "c": "warn",
+   "s": "Buying paused (FREEZE_SPEND: fuel-only spending (Gary 2026-10-18))",
+   "n": 5
+  },
+  {
+   "t": "2026-10-24T17:51:34.805Z",
+   "c": "info",
+   "s": "spend frozen",
+   "n": 20
+  },
+  {
+   "t": "2026-10-24T17:00:04.457Z",
+   "c": "power",
+   "s": "Routed 1012 MW: grid 300, compute 600, refining 112"
+  },
+  {
+   "t": "2026-10-24T16:51:45.806Z",
+   "c": "info",
+   "s": "wear repair ok"
+  },
+  {
+   "t": "2026-10-24T15:59:40.667Z",
+   "c": "power",
+   "s": "Overdrive held off: overdrive held off (flag cleared, base targets): game limiter blocks a restart until heat <= 50 (heat 57.5)"
+  },
+  {
+   "t": "2026-10-24T15:58:38.287Z",
+   "c": "power",
+   "s": "Routed 1004 MW: grid 292, compute 600, refining 112"
+  },
+  {
+   "t": "2026-10-24T15:58:36.960Z",
+   "c": "warn",
+   "s": "Alert: cooling over capacity",
+   "n": 8
+  },
+  {
+   "t": "2026-10-24T15:55:30.329Z",
+   "c": "warn",
+   "s": "Buying paused (FREEZE_SPEND: fuel-only spending (Gary 2026-10-18))",
+   "n": 2
+  },
+  {
+   "t": "2026-10-24T15:55:30.329Z",
+   "c": "info",
+   "s": "spend frozen",
+   "n": 8
+  }
+ ],
+ "fuelCap": 44760,
+ "fuelPct": 33.8,
+ "unusedSinceAt": null,
+ "researchZeroSinceAt": null,
+ "lowFuelSinceAt": null,
+ "schema": 2
+}
